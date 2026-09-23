@@ -1,6 +1,6 @@
 ---
 name: check-agents
-description: Diagnose and repair the agent swarm itself — a malformed agent definition, a routing loop, a wrongly-scoped tool list — as opposed to a bug in the user's actual product. Use when the swarm is misbehaving (wrong agent invoked, agents looping, a handoff missing context), e.g. "/fullstack-agent-swarm:check-agents <what went wrong>".
+description: Diagnose and repair the agent swarm itself — a malformed agent definition, a routing loop, a wrongly-scoped tool list — as opposed to a bug in the user's actual product. Use when the swarm is misbehaving (wrong agent invoked, agents looping, a handoff missing context), e.g. "/ai-agent-builder:check-agents <what went wrong>".
 ---
 
 Diagnose and fix a problem in the agent swarm's own definitions or routing, using `agent-doctor`.

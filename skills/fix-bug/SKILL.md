@@ -1,6 +1,6 @@
 ---
 name: fix-bug
-description: Route an existing bug report or failing behavior straight into the agent-swarm's detect/trace/fix pipeline, skipping the planning stages since the feature already exists. Use when the user describes something that's broken rather than something new to build, e.g. "/fullstack-agent-swarm:fix-bug <description>".
+description: Route an existing bug report or failing behavior straight into the agent-swarm's detect/trace/fix pipeline, skipping the planning stages since the feature already exists. Use when the user describes something that's broken rather than something new to build, e.g. "/ai-agent-builder:fix-bug <description>".
 ---
 
 Fix an existing bug using the swarm's detect/trace/fix agents, without going through full feature

@@ -2,7 +2,7 @@
   "name": "url-shortener-demo",
   "version": "1.0.0",
   "private": true,
-  "description": "Example output of the fullstack-agent-swarm pipeline - a minimal URL shortener.",
+  "description": "Example output of the ai-agent-builder pipeline - a minimal URL shortener.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

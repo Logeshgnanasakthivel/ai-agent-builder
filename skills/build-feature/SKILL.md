@@ -1,6 +1,6 @@
 ---
 name: build-feature
-description: Kick off the full agent-swarm pipeline (plan -> requirements -> database -> api -> ui -> integration -> verify -> test) for a new feature or app. Use this whenever the user wants to build something new with the fullstack-agent-swarm plugin, e.g. "/fullstack-agent-swarm:build-feature <description>".
+description: Kick off the full agent-swarm pipeline (plan -> requirements -> database -> api -> ui -> integration -> verify -> test) for a new feature or app. Use this whenever the user wants to build something new with the ai-agent-builder plugin, e.g. "/ai-agent-builder:build-feature <description>".
 ---
 
 Run the full build pipeline for the requirement given in `args`.

@@ -1,37 +1,63 @@
-# fullstack-agent-swarm
+# ai-agent-builder
 
 A Claude Code plugin: a pipeline of cooperating subagents that plan, design, build, wire together,
 test, and self-repair a full-stack feature end-to-end — plus meta-agents that extend and fix the
 swarm itself. General-purpose, not tied to any one stack or project.
 
-## Install
+Repo: https://github.com/Logeshgnanasakthivel/ai-agent-builder
 
-**As a friend / another user**, in Claude Code:
+## Get it
 
+Requires [Claude Code](https://claude.com/claude-code). Pick whichever fits:
+
+**Option A — install as a plugin (recommended, no manual cloning needed)**
+
+Inside a Claude Code session:
 ```
-/plugin add <owner>/fullstack-agent-swarm
+/plugin add Logeshgnanasakthivel/ai-agent-builder
 ```
+Restart the session, then use the slash commands below.
 
-(or, without going through a marketplace: `claude --plugin-dir https://github.com/<owner>/fullstack-agent-swarm`)
+**Option B — clone it and point Claude Code at the folder**
+```bash
+git clone https://github.com/Logeshgnanasakthivel/ai-agent-builder.git
+claude --plugin-dir ./ai-agent-builder
+```
+Good for trying it out locally or hacking on the agent definitions before publishing your own fork.
 
-Once installed, restart your Claude Code session so the new agents and skills are picked up.
+**Option C — clone it and install the agents globally (simplest, skips the plugin/skill layer)**
+```bash
+git clone https://github.com/Logeshgnanasakthivel/ai-agent-builder.git
+# Windows (PowerShell):
+Copy-Item ai-agent-builder\agents\*.md "$env:USERPROFILE\.claude\agents\" -Force
+# macOS/Linux:
+cp ai-agent-builder/agents/*.md ~/.claude/agents/
+```
+This makes all 13 agents available in **every** project you open in Claude Code, forever — no
+`/plugin add`, no slash commands, just ask for an agent by name ("use the planner-engineer agent to
+build X") or call it directly with `Agent({subagent_type: "planner-engineer", ...})`. You lose the
+`/ai-agent-builder:*` skill shortcuts from Option A, but the agents themselves work identically.
+
+Either way, **restart your Claude Code session** afterward — the agent roster loads at session
+start, so it won't pick up new agents mid-conversation.
 
 ## Use
 
-Four entry points, once installed:
+If you installed via Option A (the plugin), four entry points:
 
 ```
-/fullstack-agent-swarm:build-feature <describe what you want built>
-/fullstack-agent-swarm:fix-bug <describe what's broken>
-/fullstack-agent-swarm:create-agent <describe a capability the swarm is missing>
-/fullstack-agent-swarm:check-agents <describe how the swarm itself is misbehaving>
+/ai-agent-builder:build-feature <describe what you want built>
+/ai-agent-builder:fix-bug <describe what's broken>
+/ai-agent-builder:create-agent <describe a capability the swarm is missing>
+/ai-agent-builder:check-agents <describe how the swarm itself is misbehaving>
 ```
 
 `build-feature` is the main one — it kicks off the full pipeline starting at `planner-engineer`.
 The other three are narrower entry points for when you don't need the full plan-from-scratch flow.
 
-You can also invoke any agent directly via Claude Code's `Agent` tool with
-`subagent_type: "<agent-name>"` if you want to skip straight into the middle of the pipeline.
+If you installed via Option B or C, there are no slash commands — just invoke any agent directly
+via Claude Code's `Agent` tool with `subagent_type: "<agent-name>"`, starting with
+`planner-engineer` for a new feature.
 
 ## The roster
 
@@ -116,11 +142,11 @@ Every agent passes this shape forward to the next one (as readable text in the `
 
 ## Extending the swarm
 
-Use `/fullstack-agent-swarm:create-agent` to add a new specialist, or hand-write a new
+Use `/ai-agent-builder:create-agent` to add a new specialist, or hand-write a new
 `agents/<name>.md` following the existing files' conventions and wire it into
 `agents/routing-coordinator.md`'s dependency notes. If something in the swarm itself misbehaves
 (wrong agent picked, a routing loop, a malformed definition), use
-`/fullstack-agent-swarm:check-agents`.
+`/ai-agent-builder:check-agents`.
 
 ## License
 

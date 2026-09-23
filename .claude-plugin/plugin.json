@@ -1,9 +1,10 @@
 {
-  "name": "fullstack-agent-swarm",
+  "name": "ai-agent-builder",
   "description": "A pipeline of cooperating subagents that plan, design, build, wire together, test, and self-repair a full-stack feature end-to-end - plus meta-agents that create and fix new agents in the swarm.",
   "version": "1.0.0",
   "author": {
     "name": "Logeshgnanasakthivel"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/Logeshgnanasakthivel/ai-agent-builder"
 }

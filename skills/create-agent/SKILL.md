@@ -1,6 +1,6 @@
 ---
 name: create-agent
-description: Add a new specialist agent to the fullstack-agent-swarm roster when an existing agent genuinely doesn't cover a needed capability (e.g. a security-review agent, a deployment agent, a docs-writer agent). Use when the user asks to extend or add to the agent swarm itself, e.g. "/fullstack-agent-swarm:create-agent <what it should do>".
+description: Add a new specialist agent to the ai-agent-builder roster when an existing agent genuinely doesn't cover a needed capability (e.g. a security-review agent, a deployment agent, a docs-writer agent). Use when the user asks to extend or add to the agent swarm itself, e.g. "/ai-agent-builder:create-agent <what it should do>".
 ---
 
 Add a new agent to the swarm using `agent-factory`, this plugin's meta-agent for agent creation.
